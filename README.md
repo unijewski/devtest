@@ -95,5 +95,3 @@ http://openlibrary.org/search.json?q=the+lord+of+the+rings
 
 The price should be based on how many html nodes can you find on this site http://time.com divided by 100
 
-
-
