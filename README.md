@@ -4,7 +4,7 @@
 
 **This test is described quite vaguely on purpose, so interpretation of it's explicit and implicit requirements is up to you.**
 
-Prepare a rails 4.2 application using Ruby 2.1 , which would have 2 isolated APIs, public and private.
+Prepare a rails application using Ruby , which would have 2 isolated APIs, public and private.
 
 Private API responding to the following requests:
   
