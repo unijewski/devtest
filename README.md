@@ -9,14 +9,14 @@ Prepare a rails app (use the skeleton app to kick start the task), which would h
 
 Private API responding to the following requests:
 
-  1. GET  locations/:country_code
-  1. GET  target_groups/:country_code
-  1. POST evaluate_target
+  * 1 - GET  locations/:country_code
+  * 2 - GET  target_groups/:country_code
+  * 3 - POST evaluate_target
 
 Public API responding to the following requests
 
-  1. GET  locations/:country_code
-  1. GET  target_groups/:country_code
+  * 4 - GET  locations/:country_code
+  * 5 - GET  target_groups/:country_code
   
 The authentication type is up to you and you should assume there is no firewall
 so the server would be public facing and needs to be secured properly
