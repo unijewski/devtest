@@ -4,48 +4,44 @@
 
 **This test is described quite vaguely on purpose, so interpretation of it's explicit and implicit requirements is up to you.**
 
-Please use the skeleton app to kick start the task.
 
-### Endpoints
+Prepare a rails app (use the skeleton app to kick start the task), which would have 2 isolated APIs, public and private:
 
-### Please add
-
-#### Private API responding to the following requests:
+Private API responding to the following requests:
 
   1. GET  locations/:country_code
   1. GET  target_groups/:country_code
   1. POST evaluate_target
 
-
-The authentication type is up to you and you should assume there is no firewall
-so the server would be public facing and needs to be secured properly
-when necessary.
-
-#### Public API responding to the following requests
+Public API responding to the following requests
 
   1. GET  locations/:country_code
   1. GET  target_groups/:country_code
+  
+The authentication type is up to you and you should assume there is no firewall
+so the server would be public facing and needs to be secured properly
+when necessary.
 
 ### Models:
 
 #### Provided
 
-  - Models:
-    - PanelProvider: `id, code`
-    - Country: `id, code, panel_provider_id`
-    - Location: `id, name, external_id, secret_code`
+PanelProvider: 
+  * id, code
+
+Country: 
+  * id, code, panel_provider_id
+
+Location: 
+  * id, name, external_id, secret_code
 
 #### Please add
 
-    - LocationGroup: attributes:
-    `id, name, country_id, panel_provider_id`
+LocationGroup:
+  * id, name, country_id, panel_provider_id
 
-    - TargetGroup model should have associations with itself via parent_id
-    which would form a tree with multiple root nodes. Attributes:
-
-    ```
-      id, name, external_id, parent_id, secret_code, panel_provider_id
-    ```
+TargetGroup model should have associations with itself via parent_id which would form a tree with multiple root nodes:
+  * id, name, external_id, parent_id, secret_code, panel_provider_id
 
 Country is linked with LocationGroup via one to many relationship and with TargetGroup via many to many
 but only with the root nodes.
