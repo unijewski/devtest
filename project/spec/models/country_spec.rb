@@ -3,6 +3,7 @@ require "rails_helper"
 describe Country, type: :model do
   describe "associations" do
     it { is_expected.to belong_to(:panel_provider) }
+    it { is_expected.to have_many(:location_groups) }
   end
 
   describe "validations" do
