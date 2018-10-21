@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_21_100538) do
+ActiveRecord::Schema.define(version: 2018_10_21_122951) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -48,7 +48,6 @@ ActiveRecord::Schema.define(version: 2018_10_21_100538) do
     t.string "secret_code", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["external_id"], name: "index_locations_on_external_id", unique: true
   end
 
   create_table "panel_providers", force: :cascade do |t|
