@@ -1,6 +1,10 @@
 require "rails_helper"
 
 describe PanelProvider, type: :model do
+  describe "associations" do
+    it { is_expected.to have_many(:countries) }
+  end
+
   describe "validations" do
     subject { build(:panel_provider) }
 
