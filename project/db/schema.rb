@@ -10,11 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_21_091118) do
+ActiveRecord::Schema.define(version: 2018_10_21_100538) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "countries", force: :cascade do |t|
     t.string "code", null: false
-    t.integer "panel_provider_id", null: false
+    t.bigint "panel_provider_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["code"], name: "index_countries_on_code", unique: true
@@ -22,8 +25,8 @@ ActiveRecord::Schema.define(version: 2018_10_21_091118) do
   end
 
   create_table "countries_target_groups", force: :cascade do |t|
-    t.integer "country_id"
-    t.integer "target_group_id"
+    t.bigint "country_id"
+    t.bigint "target_group_id"
     t.index ["country_id", "target_group_id"], name: "index_countries_target_groups_on_country_and_target_group", unique: true
     t.index ["country_id"], name: "index_countries_target_groups_on_country_id"
     t.index ["target_group_id"], name: "index_countries_target_groups_on_target_group_id"
@@ -31,8 +34,8 @@ ActiveRecord::Schema.define(version: 2018_10_21_091118) do
 
   create_table "location_groups", force: :cascade do |t|
     t.string "name", null: false
-    t.integer "country_id", null: false
-    t.integer "panel_provider_id", null: false
+    t.bigint "country_id", null: false
+    t.bigint "panel_provider_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["country_id"], name: "index_location_groups_on_country_id"
@@ -58,13 +61,18 @@ ActiveRecord::Schema.define(version: 2018_10_21_091118) do
   create_table "target_groups", force: :cascade do |t|
     t.string "name", null: false
     t.string "external_id", null: false
-    t.integer "parent_id"
+    t.bigint "parent_id"
     t.string "secret_code", null: false
-    t.integer "panel_provider_id", null: false
+    t.bigint "panel_provider_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["panel_provider_id"], name: "index_target_groups_on_panel_provider_id"
     t.index ["parent_id"], name: "index_target_groups_on_parent_id"
   end
 
+  add_foreign_key "countries_target_groups", "countries"
+  add_foreign_key "countries_target_groups", "target_groups"
+  add_foreign_key "location_groups", "countries"
+  add_foreign_key "location_groups", "panel_providers"
+  add_foreign_key "target_groups", "panel_providers"
 end
