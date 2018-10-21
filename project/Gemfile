@@ -28,6 +28,7 @@ end
 group :test do
   gem "chromedriver-helper"
   gem "capybara", ">= 2.15", "< 4.0"
+  gem "database_cleaner"
   gem "factory_bot_rails"
   gem "fuubar"
   gem "shoulda-matchers", git: "git@github.com:thoughtbot/shoulda-matchers.git"
