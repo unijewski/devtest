@@ -5,4 +5,5 @@ class TargetGroup < ApplicationRecord
   has_many :children, class_name: name, foreign_key: "parent_id"
 
   validates :external_id, :name, :secret_code, presence: true
+  validates :secret_code, uniqueness: true
 end
