@@ -1,5 +1,4 @@
 class Location < ApplicationRecord
-  validates :external_id, presence: true, uniqueness: true
-  validates :name, presence: true
-  validates :secret_code, presence: true
+  validates :external_id, :name, :secret_code, presence: true
+  validates :external_id, :secret_code, uniqueness: true
 end
