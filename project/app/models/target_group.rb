@@ -1,8 +1,8 @@
 class TargetGroup < ApplicationRecord
   belongs_to :panel_provider
-  belongs_to :parent
+  belongs_to :parent, optional: true, class_name: self.class.name, foreign_key: "parent_id"
   has_and_belongs_to_many :countries
-  has_many :children
+  has_many :children, class_name: self.class.name, foreign_key: "parent_id"
 
   validates :external_id, :name, :secret_code, presence: true
 end
