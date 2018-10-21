@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_20_223838) do
+ActiveRecord::Schema.define(version: 2018_10_21_091118) do
 
   create_table "countries", force: :cascade do |t|
     t.string "code", null: false
@@ -19,6 +19,14 @@ ActiveRecord::Schema.define(version: 2018_10_20_223838) do
     t.datetime "updated_at", null: false
     t.index ["code"], name: "index_countries_on_code", unique: true
     t.index ["panel_provider_id"], name: "index_countries_on_panel_provider_id"
+  end
+
+  create_table "countries_target_groups", force: :cascade do |t|
+    t.integer "country_id"
+    t.integer "target_group_id"
+    t.index ["country_id", "target_group_id"], name: "index_countries_target_groups_on_country_and_target_group", unique: true
+    t.index ["country_id"], name: "index_countries_target_groups_on_country_id"
+    t.index ["target_group_id"], name: "index_countries_target_groups_on_target_group_id"
   end
 
   create_table "location_groups", force: :cascade do |t|
