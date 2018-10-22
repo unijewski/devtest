@@ -35,5 +35,6 @@ group :test do
   gem "fuubar"
   gem "shoulda-matchers", git: "git@github.com:thoughtbot/shoulda-matchers.git"
   gem "selenium-webdriver"
+  gem "vcr"
   gem "webmock"
 end
