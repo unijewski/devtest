@@ -8,6 +8,7 @@ module API
         format :json
         formatter :json, Grape::Formatter::FastJsonapi
 
+        mount Locations::Base
       end
     end
   end
