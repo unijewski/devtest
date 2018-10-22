@@ -10,6 +10,7 @@ module API
 
         before { authenticate! }
 
+        mount EvaluateTarget::Base
         mount Locations::Base
         mount TargetGroups::Base
       end
