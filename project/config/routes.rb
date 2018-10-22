@@ -3,4 +3,6 @@ Rails.application.routes.draw do
 
 
   root controller: :pages, action: :root
+  mount API::Public::Core, at: "/"
+  mount API::Private::Core, at: "/"
 end
