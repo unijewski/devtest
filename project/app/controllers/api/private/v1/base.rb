@@ -8,6 +8,8 @@ module API
         format :json
         formatter :json, Grape::Formatter::FastJsonapi
 
+        before { authenticate! }
+
         mount Locations::Base
         mount TargetGroups::Base
       end
