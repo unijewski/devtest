@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module PanelProviderServices
   class FetchPrice
     def initialize(code:)

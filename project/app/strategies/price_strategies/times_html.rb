@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module PriceStrategies
   class TimesHtml < Base
     private

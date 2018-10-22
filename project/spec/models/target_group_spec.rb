@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require "rails_helper"
 
 describe TargetGroup, type: :model do
@@ -5,9 +7,9 @@ describe TargetGroup, type: :model do
     it { is_expected.to belong_to(:panel_provider) }
     it do
       is_expected.to belong_to(:parent)
-                 .optional
-                 .class_name("TargetGroup")
-                 .with_foreign_key("parent_id")
+        .optional
+        .class_name("TargetGroup")
+        .with_foreign_key("parent_id")
     end
     it { is_expected.to have_and_belong_to_many(:countries) }
     it do

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 source "https://rubygems.org"
 
 ruby "2.4.0"
@@ -22,20 +24,20 @@ end
 
 group :development do
   gem "listen", ">= 3.0.5", "< 3.2"
-  gem 'rubocop', require: false
+  gem "rubocop", require: false
   gem "spring"
   gem "spring-watcher-listen", "~> 2.0.0"
   gem "web-console", ">= 3.3.0"
 end
 
 group :test do
-  gem "chromedriver-helper"
   gem "capybara", ">= 2.15", "< 4.0"
+  gem "chromedriver-helper"
   gem "database_cleaner"
   gem "factory_bot_rails"
   gem "fuubar"
-  gem "shoulda-matchers", git: "git@github.com:thoughtbot/shoulda-matchers.git"
   gem "selenium-webdriver"
+  gem "shoulda-matchers", git: "git@github.com:thoughtbot/shoulda-matchers.git"
   gem "vcr"
   gem "webmock"
 end
