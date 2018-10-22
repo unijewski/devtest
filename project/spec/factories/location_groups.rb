@@ -2,6 +2,7 @@
 
 FactoryBot.define do
   factory :location_group do
+    name { "Location group" }
     country
     panel_provider
   end
