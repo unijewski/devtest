@@ -1,8 +1,8 @@
-PANEL_PROVIDERS_CODES = %w[times_a 10_arrays times_html].freeze
+PANEL_PROVIDERS_CODES = %w[times_a ten_arrays times_html].freeze
 
 COUNTRIES = [
   { code: "PL", panel_provider_code: "times_a" },
-  { code: "US", panel_provider_code: "10_arrays" },
+  { code: "US", panel_provider_code: "ten_arrays" },
   { code: "UK", panel_provider_code: "times_html" }
 ].freeze
 

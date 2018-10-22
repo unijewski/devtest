@@ -3,7 +3,7 @@ FactoryBot.define do
     code { "times_a" }
 
     trait :ten_arrays do
-      code { "10_arrays" }
+      code { "ten_arrays" }
     end
 
     trait :times_html do
