@@ -3,6 +3,10 @@
 require "rails_helper"
 
 describe Location, type: :model do
+  describe "associations" do
+    it { is_expected.to have_and_belong_to_many(:location_groups) }
+  end
+
   describe "validations" do
     subject { build(:location) }
 
