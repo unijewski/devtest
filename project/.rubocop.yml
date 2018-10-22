@@ -1,0 +1,13 @@
+AllCops:
+  Exclude:
+  - "config/**/*"
+  - "db/**/*"
+  - "vendor/**/*"
+Metrics/LineLength:
+  Max: 100
+Style/Documentation:
+  Enabled: false
+Style/FrozenStringLiteralComment:
+  Enabled: true
+Style/StringLiterals:
+  EnforcedStyle: double_quotes
