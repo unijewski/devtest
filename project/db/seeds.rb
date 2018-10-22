@@ -48,9 +48,10 @@ end
 
 def create_locations
   LOCATIONS.each do |location|
-    Location.create!(
+    record = Location.create!(
       name: location.fetch(:name), external_id: SecureRandom.uuid, secret_code: SecureRandom.hex(64)
     )
+    record.location_groups << LocationGroup.all.sample
   end
 end
 
@@ -131,8 +132,8 @@ ActiveRecord::Base.transaction do
   puts "Generating seeds..."
   create_panel_providers
   create_countries
-  create_locations
   create_location_groups
+  create_locations
   create_target_groups
   puts "Seeds done!"
 end
