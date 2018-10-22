@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class GetTargetGroupByCountryCodeQuery
   def initialize(country_code:)
     @country_code = country_code

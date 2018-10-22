@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require "rails_helper"
 
 describe API::Public::V1::TargetGroups::Index, type: :request do

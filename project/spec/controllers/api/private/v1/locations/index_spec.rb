@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require "rails_helper"
 
 describe API::Private::V1::Locations::Index, type: :request do

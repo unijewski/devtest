@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class TargetGroupSerializer < BaseSerializer
   attributes :external_id, :id, :name, :secret_code
   belongs_to :panel_provider

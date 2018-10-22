@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 shared_context "authenticated" do
   before { allow(Rails.application.credentials).to receive(:api_access_token).and_return("123") }
   let(:headers) { { "Authorization" => "123" } }
