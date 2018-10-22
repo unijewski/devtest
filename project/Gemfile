@@ -8,6 +8,7 @@ gem "bootsnap", ">= 1.1.0", require: false
 gem "coffee-rails", "~> 4.2"
 gem "fast_jsonapi"
 gem "grape"
+gem "grape_fast_jsonapi"
 gem "jbuilder", "~> 2.5"
 gem "nokogiri"
 gem "oj"
