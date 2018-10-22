@@ -9,6 +9,7 @@ module API
         formatter :json, Grape::Formatter::FastJsonapi
 
         mount Locations::Base
+        mount TargetGroups::Base
       end
     end
   end
