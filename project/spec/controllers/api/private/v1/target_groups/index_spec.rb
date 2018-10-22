@@ -20,7 +20,8 @@ describe API::Private::V1::TargetGroups::Index, type: :request do
         end
 
         it "invokes GetTargetGroupByCountryCodeQuery" do
-          expect_any_instance_of(GetTargetGroupByCountryCodeQuery).to receive(:call).and_call_original
+          allow_any_instance_of(GetTargetGroupByCountryCodeQuery).to receive(:call).and_return(true)
+          expect_any_instance_of(GetTargetGroupByCountryCodeQuery).to receive(:call)
           subject
         end
       end

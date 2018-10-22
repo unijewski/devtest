@@ -15,7 +15,8 @@ describe API::Public::V1::Locations::Index, type: :request do
       end
 
       it "invokes GetLocationByCountryCodeQuery" do
-        expect_any_instance_of(GetLocationByCountryCodeQuery).to receive(:call).and_call_original
+        allow_any_instance_of(GetLocationByCountryCodeQuery).to receive(:call).and_return(true)
+        expect_any_instance_of(GetLocationByCountryCodeQuery).to receive(:call)
         subject
       end
     end
